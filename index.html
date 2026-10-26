@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 
@@ -5,170 +6,530 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Curriculum Vitae - Rifda Nur Ashfiya</title>
+    <title>Portofolio - Rifda Nur Ashfiya</title>
 
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS Milik Sendiri -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="cv-container">
+    <!-- NAVBAR BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
 
-        <!-- HEADER -->
-        <header class="header">
+            <a class="navbar-brand fw-bold" href="#beranda">
+                Portofolio Saya
+            </a>
 
-    <img src="foto.jpg" alt="foto.jpg" class="profile-photo">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuNavbar"
+                aria-controls="menuNavbar"
+                aria-expanded="false"
+                aria-label="Buka navigasi">
 
-    <h1>CURRICULUM VITAE</h1>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <h2>Rifda Nur Ashfiya</h2>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
 
-    <p class="subtitle">
-        Mahasiswa Teknologi Rekayasa Perangkat Lunak
-    </p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beranda">Beranda</a>
+                    </li>
 
-</header>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang Saya</a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pendidikan">Pendidikan</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#keahlian">Keahlian</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pengalaman">Pengalaman</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HEADER / BERANDA -->
+    <header class="hero-section text-center" id="beranda">
+        <div class="container">
+
+            <img
+                src="foto.jpg"
+                alt="Foto profil Rifda Nur Ashfiya"
+                class="profile-photo mb-3">
+
+            <h1 class="fw-bold">Rifda Nur Ashfiya</h1>
+
+            <p class="lead">
+                Mahasiswa Teknologi Rekayasa Perangkat Lunak
+            </p>
+
+            <a href="#tentang" class="btn btn-primary mt-2">
+                Kenali Saya
+            </a>
+
+        </div>
+    </header>
+
+
+    <main class="container py-5">
 
         <!-- DATA DIRI -->
-        <section class="section">
-            <h2>Data Diri</h2>
+        <section class="section mb-5" id="data-diri">
 
-            <div class="data-diri">
-                <p>
-                    <strong>Nama:</strong>
-                    Rifda Nur Ashfiya
-                </p>
+            <h2 class="section-title">Data Diri</h2>
 
-                <p>
-                    <strong>Tempat, Tanggal Lahir:</strong>
-                    Ciamis, 22 Oktober 2006
-                </p>
+            <div class="card shadow-sm">
+                <div class="card-body">
 
-                <p>
-                    <strong>Alamat:</strong>
-                    Kampung Bungursari, Desa Sindangherang,
-                    Kecamatan Panumbangan, Kabupaten Ciamis,
-                    Jawa Barat, Indonesia
-                </p>
+                    <div class="row">
 
-                <p>
-                    <strong>No. HP:</strong>
-                    08965581355
-                </p>
+                        <div class="col-md-6">
+                            <p><strong>Nama:</strong> Rifda Nur Ashfiya</p>
 
-                <p>
-                    <strong>Email:</strong>
-                    ashfiyarifda@gmail.com
-                </p>
+                            <p>
+                                <strong>Tempat, Tanggal Lahir:</strong>
+                                Ciamis, 22 Oktober 2006
+                            </p>
 
-                <p>
-                    <strong>Instagram:</strong>
-                    @rifdanurashfy
-                </p>
+                            <p>
+                                <strong>Alamat:</strong>
+                                Kampung Bungursari, Desa Sindangherang,
+                                Kecamatan Panumbangan, Kabupaten Ciamis,
+                                Jawa Barat, Indonesia
+                            </p>
 
-                <p>
-                    <strong>Perguruan Tinggi:</strong>
-                    Politeknik Manahijul Huda
-                </p>
+                            <p>
+                                <strong>No. HP:</strong>
+                                08965581355
+                            </p>
+                        </div>
 
-                <p>
-                    <strong>Program Studi:</strong>
-                    Teknologi Rekayasa Perangkat Lunak
-                </p>
+                        <div class="col-md-6">
+                            <p>
+                                <strong>Email:</strong>
+                                ashfiyarifda@gmail.com
+                            </p>
 
-                <p>
-                    <strong>Semester:</strong>
-                    3
-                </p>
+                            <p>
+                                <strong>Instagram:</strong>
+                                @rifdanurashfy
+                            </p>
+
+                            <p>
+                                <strong>Perguruan Tinggi:</strong>
+                                Politeknik Manahijul Huda
+                            </p>
+
+                            <p>
+                                <strong>Program Studi:</strong>
+                                Teknologi Rekayasa Perangkat Lunak
+                            </p>
+
+                            <p><strong>Semester:</strong> 3</p>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
+
         </section>
 
 
-        <!-- TENTANG SAYA -->
-        <section class="section">
-            <h2>Tentang Saya</h2>
+        <!-- ACCORDION BOOTSTRAP -->
+        <section class="section mb-5" id="tentang">
 
-            <p class="description">
-                Saya merupakan mahasiswa semester 3 Program Studi Teknologi
-                Rekayasa Perangkat Lunak (TRPL) yang memiliki ketertarikan
-                pada bidang teknologi, pemrograman, dan pengembangan aplikasi.
-                Saya senang mempelajari hal-hal baru, mampu bekerja secara
-                individu maupun dalam tim, serta memiliki motivasi untuk terus
-                mengembangkan kemampuan dan pengalaman.
+            <h2 class="section-title">Tentang Saya</h2>
+
+            <div class="accordion" id="accordionTentang">
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+                        <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#tentangSaya"
+                            aria-expanded="true"
+                            aria-controls="tentangSaya">
+
+                            Profil Singkat
+                        </button>
+                    </h3>
+
+                    <div
+                        id="tentangSaya"
+                        class="accordion-collapse collapse show"
+                        data-bs-parent="#accordionTentang">
+
+                        <div class="accordion-body">
+                            Saya merupakan mahasiswa semester 3 Program Studi
+                            Teknologi Rekayasa Perangkat Lunak (TRPL) yang
+                            memiliki ketertarikan pada bidang teknologi,
+                            pemrograman, dan pengembangan aplikasi.
+
+                            Saya senang mempelajari hal-hal baru, mampu
+                            bekerja secara individu maupun dalam tim, serta
+                            memiliki motivasi untuk terus mengembangkan
+                            kemampuan dan pengalaman.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#minatSaya"
+                            aria-expanded="false"
+                            aria-controls="minatSaya">
+
+                            Minat dan Tujuan
+                        </button>
+                    </h3>
+
+                    <div
+                        id="minatSaya"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionTentang">
+
+                        <div class="accordion-body">
+                            Saya tertarik mempelajari pemrograman, desain
+                            sederhana, dan pengembangan aplikasi. Saya ingin
+                            terus meningkatkan keterampilan agar dapat
+                            menghasilkan karya yang bermanfaat.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARD BOOTSTRAP: PENDIDIKAN -->
+        <section class="section mb-5" id="pendidikan">
+
+            <h2 class="section-title">Pendidikan</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card education-card h-100 shadow-sm">
+
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                Politeknik Manahijul Huda
+                            </h3>
+
+                            <p class="card-text">
+                                Teknologi Rekayasa Perangkat Lunak (TRPL)
+                            </p>
+
+                            <span class="badge text-bg-primary">
+                                2025 - Sekarang
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card education-card h-100 shadow-sm">
+
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                SMA Terpadu Manahijul Huda
+                            </h3>
+
+                            <p class="card-text">
+                                Pendidikan Menengah Atas
+                            </p>
+
+                            <span class="badge text-bg-primary">
+                                2022 - 2025
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card education-card h-100 shadow-sm">
+
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                SMP Terpadu Manahijul Huda
+                            </h3>
+
+                            <p class="card-text">
+                                Pendidikan Menengah Pertama
+                            </p>
+
+                            <span class="badge text-bg-primary">
+                                2019 - 2022
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card education-card h-100 shadow-sm">
+
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                SD Negeri 1 Sindangherang
+                            </h3>
+
+                            <p class="card-text">
+                                Pendidikan Dasar
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS BAR BOOTSTRAP: KEAHLIAN -->
+        <section class="section mb-5" id="keahlian">
+
+            <h2 class="section-title">Keahlian</h2>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Dasar Pemrograman Python
+                        </label>
+
+                        <div
+                            class="progress"
+                            role="progressbar"
+                            aria-label="Dasar pemrograman Python"
+                            aria-valuenow="50"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+
+                            <div class="progress-bar" style="width: 50%">
+                                50%
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Canva dan Desain Sederhana
+                        </label>
+
+                        <div
+                            class="progress"
+                            role="progressbar"
+                            aria-label="Canva dan desain sederhana"
+                            aria-valuenow="75"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+
+                            <div class="progress-bar bg-success"
+                                style="width: 75%">
+                                75%
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Microsoft Word dan PowerPoint
+                        </label>
+
+                        <div
+                            class="progress"
+                            role="progressbar"
+                            aria-label="Microsoft Word dan PowerPoint"
+                            aria-valuenow="75"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+
+                            <div class="progress-bar bg-info"
+                                style="width: 75%">
+                                75%
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Kerja Sama dan Komunikasi
+                        </label>
+
+                        <div
+                            class="progress"
+                            role="progressbar"
+                            aria-label="Kerja sama dan komunikasi"
+                            aria-valuenow="80"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+
+                            <div class="progress-bar bg-warning"
+                                style="width: 80%">
+                                80%
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <label class="form-label">
+                            Menulis Cerpen atau Novel
+                        </label>
+
+                        <div
+                            class="progress"
+                            role="progressbar"
+                            aria-label="Menulis cerpen atau novel"
+                            aria-valuenow="80"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+
+                            <div class="progress-bar bg-danger"
+                                style="width: 80%">
+                                80%
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <p class="text-muted small mt-3 mb-0">
+                        Persentase merupakan ilustrasi tingkat penguasaan
+                        diri dan dapat disesuaikan.
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- CARD BOOTSTRAP: PENGALAMAN ORGANISASI -->
+        <section class="section mb-5" id="pengalaman">
+
+            <h2 class="section-title">Pengalaman Organisasi</h2>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="card shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <span class="badge text-bg-success mb-2">
+                                2024 - 2025
+                            </span>
+
+                            <h3 class="card-title h5">
+                                OSAMA - Divisi Kesenian
+                            </h3>
+
+                            <p class="card-text">
+                                Berpartisipasi dalam kegiatan organisasi
+                                di lingkungan pondok pada bidang kesenian.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PENUTUP -->
+        <section class="text-center py-4">
+
+            <h2 class="h4">Terima Kasih</h2>
+
+            <p>
+                Terima kasih telah mengunjungi portofolio online saya.
             </p>
+
+            <a
+                href="mailto:ashfiyarifda@gmail.com"
+                class="btn btn-primary">
+
+                Hubungi Saya
+            </a>
+
         </section>
 
-
-        <!-- PENDIDIKAN -->
-        <section class="section">
-            <h2>Pendidikan</h2>
-
-            <div class="education-item">
-                <h3>Politeknik Manahijul Huda</h3>
-
-                <p>
-                    Teknologi Rekayasa Perangkat Lunak (TRPL)
-                </p>
-
-                <span>2025 - Sekarang</span>
-            </div>
+    </main>
 
 
-            <div class="education-item">
-                <h3>SMA Terpadu Manahijul Huda</h3>
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-3">
 
-                <span>2022 - 2025</span>
-            </div>
+        <p class="mb-0">
+            &copy; 2026 Rifda Nur Ashfiya. Portofolio Online.
+        </p>
 
-
-            <div class="education-item">
-                <h3>SMP Terpadu Manahijul Huda</h3>
-
-                <span>2019 - 2022</span>
-            </div>
+    </footer>
 
 
-            <div class="education-item">
-                <h3>SD Negeri 1 Sindangherang</h3>
-            </div>
-        </section>
-
-
-        <!-- KEAHLIAN -->
-        <section class="section">
-            <h2>Keahlian</h2>
-
-            <ul class="skills">
-                <li>Dasar pemrograman Python</li>
-                <li>Canva dan desain sederhana</li>
-                <li>Microsoft Word dan PowerPoint</li>
-                <li>Mampu bekerja sama dalam tim</li>
-                <li>Mampu berkomunikasi dan belajar hal baru</li>
-                <li>Menulis cerpen atau novel berbagai genre</li>
-            </ul>
-        </section>
-
-
-        <!-- PENGALAMAN ORGANISASI -->
-        <section class="section">
-            <h2>Pengalaman Organisasi</h2>
-
-            <div class="organization-item">
-
-                <h3>OSAMA - Divisi Kesenian</h3>
-
-                <span>2024 - 2025</span>
-
-                <p>
-                    Berpartisipasi dalam kegiatan organisasi di lingkungan
-                    pondok pada bidang kesenian.
-                </p>
-
-            </div>
-        </section>
-
-    </div>
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
+
 </html>
+```
