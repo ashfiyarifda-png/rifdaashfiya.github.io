@@ -312,60 +312,7 @@
 </div>
 </section>
         
-        <!-- CARD BOOTSTRAP: PENDIDIKAN -->
-        <section class="content-section bg-white" id="pendidikan">
-  <div class="container">
-    <p class="eyebrow mb-1">Perjalanan Belajar</p>
-    <h2 class="section-title">Pendidikan</h2>
-    <p class="section-subtitle">Riwayat pendidikan saya.</p>
-
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="card custom-card">
-          <div class="card-body p-4">
-            <div class="icon-box">01</div>
-            <h3 class="h5">Politeknik Manahijul Huda</h3>
-            <p class="mb-2">Teknologi Rekayasa Perangkat Lunak (TRPL)</p>
-            <span class="badge badge-soft">2025–Sekarang</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="card custom-card">
-          <div class="card-body p-4">
-            <div class="icon-box">02</div>
-            <h3 class="h5">SMA Terpadu Manahijul Huda</h3>
-            <p class="text-secondary mb-2">Pendidikan Menengah Atas</p>
-            <span class="badge badge-soft">2022–2025</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="card custom-card">
-          <div class="card-body p-4">
-            <div class="icon-box">03</div>
-            <h3 class="h5">SMP Terpadu Manahijul Huda</h3>
-            <p class="text-secondary mb-2">Pendidikan Menengah Pertama</p>
-            <span class="badge badge-soft">2019–2022</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="card custom-card">
-          <div class="card-body p-4">
-            <div class="icon-box">04</div>
-            <h3 class="h5">SD Negeri 1 Sindangherang</h3>
-            <p class="text-secondary mb-2">Pendidikan Dasar</p>
-            <span class="badge badge-soft">Sekolah Dasar</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        
         
 <!-- BOOTSTRAP TABLE -->
 <div class="table-responsive shadow-sm rounded mt-4">
@@ -662,7 +609,7 @@ const jurusan = document.createElement("td");
 jurusan.textContent = item.jurusan || item.jenjang || "-";
 
 const tahun = document.createElement("td");
-tahun.textContent = tahun;
+tahun.textContent = periode;
 
 baris.append(nomor, sekolah, jurusan, tahun);
 container.appendChild(baris);
