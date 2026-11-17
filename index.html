@@ -241,26 +241,9 @@
 
             <h2 class="section-title">Pendidikan</h2>
 
-            <div class="row g-4">
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card education-card h-100 shadow-sm">
-
-                        <div class="card-body">
-                            <h3 class="card-title h5">
-                                Politeknik Manahijul Huda
-                            </h3>
-
-                            <p class="card-text">
-                                Teknologi Rekayasa Perangkat Lunak (TRPL)
-                            </p>
-
-                            <span class="badge text-bg-primary">
-                                2025 - Sekarang
-                            </span>
-                        </div>
-
-                    </div>
+            <div class="row g-4" id="educationList">
+    <p class="text-secondary">Memuat data pendidikan...</p>
+</div>
                 </div>
 
 
@@ -527,6 +510,76 @@
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
+
+    <!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://otlkchmyiegnmkyofydt.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_sDQQvKt0jmT6CblLByIn5g_BdyTm3G5";
+
+const database = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+async function tampilkanPendidikan() {
+    const container = document.getElementById("educationList");
+
+    const { data, error } = await database
+        .from("pendidikan")
+        .select("*")
+        .order("tahun_mulai", { ascending: false, nullsFirst: false });
+
+    if (error) {
+        container.innerHTML =
+            '<p class="text-danger">Data pendidikan gagal dimuat.</p>';
+        console.error(error);
+        return;
+    }
+
+    container.innerHTML = "";
+
+    data.forEach((item, index) => {
+        const tahun = item.tahun_mulai
+            ? `${item.tahun_mulai}–${item.tahun_selesai || "Sekarang"}`
+            : "Tahun belum diisi";
+
+        const kolom = document.createElement("div");
+        kolom.className = "col-md-6 col-lg-3";
+
+        const kartu = document.createElement("div");
+        kartu.className = "card custom-card";
+
+        const isi = document.createElement("div");
+        isi.className = "card-body p-4";
+
+        const nomor = document.createElement("div");
+        nomor.className = "icon-box";
+        nomor.textContent = String(index + 1).padStart(2, "0");
+
+        const sekolah = document.createElement("h3");
+        sekolah.className = "h5";
+        sekolah.textContent = item.nama_sekolah;
+
+        const jurusan = document.createElement("p");
+        jurusan.className = "mb-2";
+        jurusan.textContent = item.jurusan || item.jenjang;
+
+        const periode = document.createElement("span");
+        periode.className = "badge badge-soft";
+        periode.textContent = tahun;
+
+        isi.append(nomor, sekolah, jurusan, periode);
+        kartu.appendChild(isi);
+        kolom.appendChild(kartu);
+        container.appendChild(kolom);
+    });
+}
+
+tampilkanPendidikan();
+</script>
 
 </body>
 
