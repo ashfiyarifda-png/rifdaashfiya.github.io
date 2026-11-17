@@ -292,12 +292,24 @@
         <h2 class="section-title">Pendidikan</h2>
         <p class="section-subtitle">Riwayat pendidikan saya.</p>
 
-        <div class="row g-4" id="educationList">
-            <div class="col-12">
-                <p class="text-secondary">Memuat data pendidikan...</p>
-            </div>
-        </div>
-    </div>
+        <div class="table-responsive shadow-sm rounded mt-4">
+    <table class="table table-bordered table-striped table-hover text-center mb-0">
+        <thead class="table-dark">
+            <tr>
+                <th>No.</th>
+                <th>Nama Sekolah</th>
+                <th>Jurusan / Jenjang</th>
+                <th>Tahun</th>
+            </tr>
+        </thead>
+
+        <tbody id="educationTable">
+            <tr>
+                <td colspan="4">Memuat data pendidikan...</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </section>
         
         <!-- CARD BOOTSTRAP: PENDIDIKAN -->
@@ -354,7 +366,28 @@
     </div>
   </div>
 </section>
+        
+<!-- BOOTSTRAP TABLE -->
+<div class="table-responsive shadow-sm rounded mt-4">
+    <table class="table table-bordered table-striped table-hover text-center mb-0">
 
+        <thead class="table-dark">
+            <tr>
+                <th>No.</th>
+                <th>Nama Sekolah</th>
+                <th>Jurusan / Jenjang</th>
+                <th>Tahun</th>
+            </tr>
+        </thead>
+
+        <tbody id="educationTable">
+            <tr>
+                <td colspan="4">Memuat data pendidikan...</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
 
         <!-- PROGRESS BAR BOOTSTRAP: KEAHLIAN -->
         <section class="section mb-5" id="keahlian">
@@ -550,7 +583,35 @@
 
     </footer>
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+<script>
+$(document).ready(function() {
+
+    // Animasi fade pada bagian CV
+    $(".section, .content-section").hide();
+
+    $(".section, .content-section").fadeIn(1200);
+
+    // Tombol untuk menampilkan dan menyembunyikan data diri
+    $("#data-diri .card").after(
+        '<button id="toggleData" class="btn btn-outline-primary mt-3">Sembunyikan Data Diri</button>'
+    );
+
+    $("#toggleData").click(function() {
+        $("#data-diri .card").fadeToggle(500);
+
+        $(this).text(
+            $(this).text() === "Sembunyikan Data Diri"
+            ? "Tampilkan Data Diri"
+            : "Sembunyikan Data Diri"
+        );
+    });
+
+});
+</script>
+    
     <!-- Bootstrap JavaScript -->
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
@@ -568,10 +629,9 @@ const database = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
-
 async function tampilkanPendidikan() {
-    const container = document.getElementById("educationList");
-
+    const container = document.getElementById("educationTable");
+    
     const { data, error } = await database
         .from("pendidikan")
         .select("*")
@@ -587,39 +647,26 @@ async function tampilkanPendidikan() {
     container.innerHTML = "";
 
     data.forEach((item, index) => {
-        const tahun = item.tahun_mulai
-            ? `${item.tahun_mulai}–${item.tahun_selesai || "Sekarang"}`
-            : "Tahun belum diisi";
+        const periode = item.tahun_mulai
+    ? `${item.tahun_mulai}–${item.tahun_selesai || "Sekarang"}`
+    : "Tahun belum diisi";
+const baris = document.createElement("tr");
 
-        const kolom = document.createElement("div");
-        kolom.className = "col-md-6 col-lg-3";
+const nomor = document.createElement("td");
+nomor.textContent = index + 1;
 
-        const kartu = document.createElement("div");
-        kartu.className = "card custom-card";
+const sekolah = document.createElement("td");
+sekolah.textContent = item.nama_sekolah;
 
-        const isi = document.createElement("div");
-        isi.className = "card-body p-4";
+const jurusan = document.createElement("td");
+jurusan.textContent = item.jurusan || item.jenjang || "-";
 
-        const nomor = document.createElement("div");
-        nomor.className = "icon-box";
-        nomor.textContent = String(index + 1).padStart(2, "0");
+const tahun = document.createElement("td");
+tahun.textContent = tahun;
 
-        const sekolah = document.createElement("h3");
-        sekolah.className = "h5";
-        sekolah.textContent = item.nama_sekolah;
-
-        const jurusan = document.createElement("p");
-        jurusan.className = "mb-2";
-        jurusan.textContent = item.jurusan || item.jenjang;
-
-        const periode = document.createElement("span");
-        periode.className = "badge badge-soft";
-        periode.textContent = tahun;
-
-        isi.append(nomor, sekolah, jurusan, periode);
-        kartu.appendChild(isi);
-        kolom.appendChild(kartu);
-        container.appendChild(kolom);
+baris.append(nomor, sekolah, jurusan, tahun);
+container.appendChild(baris);
+        
     });
 }
 
@@ -629,4 +676,3 @@ tampilkanPendidikan();
 </body>
 
 </html>
-```
